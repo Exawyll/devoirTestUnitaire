@@ -1,16 +1,25 @@
-package main;
+/**
+ * 
+ */
+package devoirTUutilsTest;
+
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import model.Game;
+import org.junit.Test;
+
 import utils.ReadTemplateFile;
 
-public class Application {
+/**
+ * @author WYLLIAM
+ *
+ */
+public class ReadTemplateFileTest {
 
-	public static void main(String[] args) {
-		Game game = new Game();
-		
+	@Test
+	public void readTest() {
 		ReadTemplateFile rtf = new ReadTemplateFile();
 		
 		final HashMap<String, ArrayList<String>> monDico = new HashMap<String, ArrayList<String>>();
@@ -22,7 +31,7 @@ public class Application {
 		myLetter = monDico.get("A");
 		
 		for (int i = 0; i < myLetter.size(); i++) {
-			System.out.println(myLetter.get(i));
+			assertTrue(myLetter.get(i) instanceof String);
 		}
 	}
 
