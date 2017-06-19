@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class FileReader {
+public class ReadTemplateFile {
 
-	static final private String TEMPLATE_1 = "";
-	static final private String TEMPLATE_2 = "";
+	static final private String TEMPLATE_1 = "template1.txt";
+	static final private String TEMPLATE_2 = "template2.txt";
 	static final private String[] ALPHABET = {"?", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 	private int loopSize = 0;
 	
