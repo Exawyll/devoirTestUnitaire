@@ -51,6 +51,24 @@ public class AsciiArt {
 	
 
 	/**
+	 * @return the alphabet
+	 */
+	public HashMap<String, ArrayList<String>> getAlphabet() {
+		return alphabet;
+	}
+
+
+
+	/**
+	 * @param alphabet the alphabet to set
+	 */
+	public void setAlphabet(HashMap<String, ArrayList<String>> alphabet) {
+		this.alphabet = alphabet;
+	}
+
+
+
+	/**
 	 * @param template
 	 * @throws Exception 
 	 */
