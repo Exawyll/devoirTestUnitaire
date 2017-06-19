@@ -14,11 +14,17 @@ public class Application {
 		
 		ReadTemplateFile rtf = new ReadTemplateFile();
 		
-		HashMap<String, ArrayList<String>> monDico = new HashMap<String, ArrayList<String>>();
+		final HashMap<String, ArrayList<String>> monDico = new HashMap<String, ArrayList<String>>();
 		
 		rtf.read(1, monDico);
 		
-		System.out.println(monDico.get("A").toString());
+		ArrayList<String> myLetter = new ArrayList<String>();
+		
+		myLetter = monDico.get("A");
+		
+		for (int i = 0; i < myLetter.size(); i++) {
+			System.out.println(myLetter.get(i));
+		}
 	}
 
 }

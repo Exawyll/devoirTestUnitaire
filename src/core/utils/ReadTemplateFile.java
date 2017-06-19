@@ -9,19 +9,20 @@ import java.util.HashMap;
 
 public class ReadTemplateFile {
 
+	static final private String FILEPATH = System.getProperty("user.dir") + "\\resources\\";
 	static final private String TEMPLATE_1 = "template1.txt";
 	static final private String TEMPLATE_2 = "template2.txt";
 	static final private String[] ALPHABET = {"?", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 	private int loopSize = 0;
 	
-	public void read(int template, HashMap<String, ArrayList<String>> alphabet) {
+	public void read(int template, final HashMap<String, ArrayList<String>> alphabet) {
 		File file = null;
 		
 		if (template == 1) {
-			file = new File(TEMPLATE_1);
+			file = new File(FILEPATH + TEMPLATE_1);
 			loopSize = 9;
 		} else {
-			file = new File(TEMPLATE_2);
+			file = new File(FILEPATH + TEMPLATE_2);
 			loopSize = 11;
 		}
 		
@@ -34,18 +35,20 @@ public class ReadTemplateFile {
 		    String text = null;
 		    ArrayList<String> letter = new ArrayList<String>();
 		    int cursor = 0;
+		    int counter = loopSize;
 
 		    while ((text = reader.readLine()) != null) {
 		    		
 		    	letter.add(text);
 		    	
-		    	if (loopSize == 0) {
+		    	if (counter <= 1) {
 		    		alphabet.put(ALPHABET[cursor], letter);
 		    		cursor++;
 		    		letter = new ArrayList<String>();
+		    		counter = loopSize;
 		    	}
 	    		
-	    		loopSize--;
+		    	counter--;
 		    }
 		} catch (FileNotFoundException e) {
 		    e.printStackTrace();
